@@ -57,21 +57,21 @@ int main(){
 
   do{
   	system("cls");
-    wprintf(L"\n\t┏━━━━━━━━━━━━━ ÁRVORE BINÁRIA ━━━━━━━━━━━━━━━━━━┓");
-    wprintf(L"\n\t┃                                               ┃");
-    wprintf(L"\n\t┃  1) Mostrar folhas da árvore                  ┃");
-    wprintf(L"\n\t┃  2) Mostrar elementos de um nivel             ┃");
-    wprintf(L"\n\t┃  3) Mostrar a soma de todos os elementos      ┃");
-    wprintf(L"\n\t┃  4) Mostrar o numero de folhas da árvore      ┃");
-    wprintf(L"\n\t┃  5) Mostrar percurso em largura na árvore     ┃");
-    wprintf(L"\n\t┃  6) Mostrar a árvore                          ┃");
-    wprintf(L"\n\t┃  7) Eliminar um elemento da árvore            ┃");
-    wprintf(L"\n\t┃  8) Adicionar um elemento na árvore           ┃");
-    wprintf(L"\n\t┃  9) Limpar a árvore                           ┃");
-    wprintf(L"\n\t┃ 10) Buscar um elemento da árvore              ┃");
-    wprintf(L"\n\t┃  0) Sair                                      ┃");
-    wprintf(L"\n\t┃                                               ┃");
-    wprintf(L"\n\t┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
+    wprintf(L"\n\t┌───────────── ÁRVORE BINÁRIA ──────────────────┐");
+    wprintf(L"\n\t│                                               │");
+    wprintf(L"\n\t│  1) Mostrar folhas da árvore                  │");
+    wprintf(L"\n\t│  2) Mostrar elementos de um nivel             │");
+    wprintf(L"\n\t│  3) Mostrar a soma de todos os elementos      │");
+    wprintf(L"\n\t│  4) Mostrar o numero de folhas da árvore      │");
+    wprintf(L"\n\t│  5) Mostrar percurso em largura na árvore     │");
+    wprintf(L"\n\t│  6) Mostrar a árvore                          │");
+    wprintf(L"\n\t│  7) Eliminar um elemento da árvore            │");
+    wprintf(L"\n\t│  8) Adicionar um elemento na árvore           │");
+    wprintf(L"\n\t│  9) Limpar a árvore                           │");
+    wprintf(L"\n\t│ 10) Buscar um elemento da árvore              │");
+    wprintf(L"\n\t│  0) Sair                                      │");
+    wprintf(L"\n\t│                                               │");
+    wprintf(L"\n\t└───────────────────────────────────────────────┘");
     wprintf(L"\n\t   Digite uma opção:  ");
     scanf("%d", &opcao);
     switch(opcao){
@@ -185,15 +185,15 @@ int main(){
     	case 0:{
     		system("cls");
     		wprintf(L"\n\n\t\t");
-	        wprintf(L"\n\t┏━━━━━━━━━━━ ÁRVORE BINÁRIA ━━━━━━━━━━━━━━┓");
-	        wprintf(L"\n\t┃                                         ┃");
-	        wprintf(L"\n\t┃  Programa feito para obtenção de nota   ┃");
-	        wprintf(L"\n\t┃  parcial de estrutura de dados          ┃");
-	        wprintf(L"\n\t┃  Obrigado por usar nosso app!           ┃");
-	        wprintf(L"\n\t┃                                         ┃");
-	  	wprintf(L"\n\t┃  Criado por Rodrigo Alves Mesquita      ┃");
-	        wprintf(L"\n\t┃                                         ┃");
-	        wprintf(L"\n\t┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n\t");
+	        wprintf(L"\n\t┌─────────── ÁRVORE BINÁRIA ──────────────┐");
+	        wprintf(L"\n\t│                                         │");
+	        wprintf(L"\n\t│  Programa feito para obtenção de nota   │");
+	        wprintf(L"\n\t│  parcial de estrutura de dados          │");
+	        wprintf(L"\n\t│  Obrigado por usar nosso app!           │");
+	        wprintf(L"\n\t│                                         │");
+	  			wprintf(L"\n\t│  Criado por Rodrigo Alves Mesquita      │");
+	        wprintf(L"\n\t│                                         │");
+	        wprintf(L"\n\t└─────────────────────────────────────────┘\n\t");
     		getch();
 	  	exit(0);
     		break;

@@ -11,12 +11,12 @@ Escreva um programa que contenha as seguintes FUNCÕES:
 
   a) Mostre apenas os elementos folha de uma árvore binária.
   b) Mostre os elementos de uma árvore que se encontram em 
-  	 um determinado nível (o usário informa o nível desejado).
+     um determinado nível (o usário informa o nível desejado).
   c) Calcule e mostre a soma de todos os valores de uma árvore.
   d) Escreva uma função recursiva que conta o número de 
-  	 folhas em uma árvore binária.
+     folhas em uma árvore binária.
   e) Escreva uma função que realiza um percurso em largura na árvore. 
-  	 Você pode usar uma fila auxiliar.
+     Você pode usar uma fila auxiliar.
 ````````
 O Progama foi feito em **linguagem C** na IDE Code::Blocks
 

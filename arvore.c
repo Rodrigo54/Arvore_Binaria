@@ -2,11 +2,11 @@
  * @name ÁRVORE BINÁRIA
  *
  * @todo Escreva um programa que contenha as seguintes FUNCÕES:
- * a)	Mostre apenas os elementos folha de uma árvore binária.
- * b)	Mostre os elementos de uma árvore que se encontram em um determinado nível (o usário informa o nível desejado).
- * c)	Calcule e mostre a soma de todos os valores de uma árvore.
- * d)	Escreva uma função recursiva que conta o número de folhas em uma árvore binária.
- * e)	Escreva uma função que realiza um percurso em largura na árvore. Você pode usar uma fila auxiliar.
+ * a) Mostre apenas os elementos folha de uma árvore binária.
+ * b) Mostre os elementos de uma árvore que se encontram em um determinado nível (o usário informa o nível desejado).
+ * c) Calcule e mostre a soma de todos os valores de uma árvore.
+ * d) Escreva uma função recursiva que conta o número de folhas em uma árvore binária.
+ * e) Escreva uma função que realiza um percurso em largura na árvore. Você pode usar uma fila auxiliar.
  *
  * @author Rodrigo Alves Mesquita <rodrigo54mix@gmail.com>
  * @version 2.5
@@ -49,8 +49,8 @@ No* arv_cria (int c, No* sae, No* sad){
 **/
 No* arv_libera (No* a){
   if (!arv_vazia(a)){
-    arv_libera(a->esq);	// libera sae  
-    arv_libera(a->dir);	// libera sad  
+    arv_libera(a->esq); // libera sae  
+    arv_libera(a->dir); // libera sad  
     free(a);            // libera raiz 
   }
   return NULL;
@@ -62,8 +62,8 @@ No* arv_libera (No* a){
 void arv_imprime_pre (No* a){
   if (!arv_vazia(a)){
     wprintf(L"%d ", a->v);    // mostra raiz 
-    arv_imprime_pre(a->esq);	// mostra sae  
-    arv_imprime_pre(a->dir); 	// mostra sad  
+    arv_imprime_pre(a->esq);  // mostra sae  
+    arv_imprime_pre(a->dir);  // mostra sad  
   }
 }
 
@@ -72,8 +72,8 @@ void arv_imprime_pre (No* a){
 **/
 void arv_imprime_pos (No* a){
   if (!arv_vazia(a)){
-    arv_imprime_pos(a->esq); 	// mostra sae  
-    arv_imprime_pos(a->dir); 	// mostra sad  
+    arv_imprime_pos(a->esq);  // mostra sae  
+    arv_imprime_pos(a->dir);  // mostra sad  
     wprintf(L"%d ", a->v);    // mostra raiz
   }
 }
@@ -123,26 +123,26 @@ int conta_folhas(No* a){
  *  @note Leia mais em arvore.h
 **/
 void largura(No* t){
-	No *aux, *vet[50];
-	int fim, inicio;
+  No *aux, *vet[50];
+  int fim, inicio;
 
-	vet[0] = t;
-	inicio = 0;
-	fim = 1;
+  vet[0] = t;
+  inicio = 0;
+  fim = 1;
 
-	while(inicio < fim){
-		aux = vet[inicio];
-		inicio++;
-		wprintf(L"%d  ", aux->v);
-		if(aux->esq != NULL){
-			vet[fim] = aux->esq;
-			fim++;
-		}
-		if(aux->dir != NULL){
-			vet[fim] = aux->dir;
-			fim++;
-		}
-	}
+  while(inicio < fim){
+    aux = vet[inicio];
+    inicio++;
+    wprintf(L"%d  ", aux->v);
+    if(aux->esq != NULL){
+      vet[fim] = aux->esq;
+      fim++;
+    }
+    if(aux->dir != NULL){
+      vet[fim] = aux->dir;
+      fim++;
+    }
+  }
 
 }
 
@@ -161,17 +161,17 @@ int soma_nos (No* p){
  *  @note Leia mais em arvore.h
 **/
 int altura (No* a){
-	int e,d;
-	if (arv_vazia(a))
+  int e,d;
+  if (arv_vazia(a))
     return 0;
 
-	e = altura(a->esq);
-	d = altura(a->dir);
+  e = altura(a->esq);
+  d = altura(a->dir);
 
   if(e > d)
-		return e+1;
+    return e+1;
 
-	return d+1;
+  return d+1;
 }
 
 /** @name Imprime Nós de um nivel

@@ -41,22 +41,22 @@ int main(){
   int opcao,v;
 
   No* a = arv_cria(8,
-	              arv_cria(4,
-	                  arv_cria(2,
-	                           arv_cria(1,arv_criavazia(),arv_criavazia()),
-	                           arv_cria(3,arv_criavazia(),arv_criavazia())),
-	                  arv_cria(6,
-	                           arv_cria(5,arv_criavazia(),arv_criavazia()),
-	                           arv_cria(7,arv_criavazia(),arv_criavazia()))
-	              ),
-	              arv_cria(10,
-	                  arv_cria(9, arv_criavazia(), arv_criavazia()),
-	                  arv_cria(11, arv_criavazia(), arv_criavazia())
-	              )
+                arv_cria(4,
+                    arv_cria(2,
+                             arv_cria(1,arv_criavazia(),arv_criavazia()),
+                             arv_cria(3,arv_criavazia(),arv_criavazia())),
+                    arv_cria(6,
+                             arv_cria(5,arv_criavazia(),arv_criavazia()),
+                             arv_cria(7,arv_criavazia(),arv_criavazia()))
+                ),
+                arv_cria(10,
+                    arv_cria(9, arv_criavazia(), arv_criavazia()),
+                    arv_cria(11, arv_criavazia(), arv_criavazia())
+                )
           );
 
   do{
-  	system("cls");
+    system("cls");
     wprintf(L"\n\t┌───────────── ÁRVORE BINÁRIA ──────────────────┐");
     wprintf(L"\n\t│                                               │");
     wprintf(L"\n\t│  1) Mostrar folhas da árvore                  │");
@@ -75,88 +75,88 @@ int main(){
     wprintf(L"\n\t   Digite uma opção:  ");
     scanf("%d", &opcao);
     switch(opcao){
-    	case 1:{
-    		system("cls");
-    		wprintf(L"\n\n\t\t");
-  			wprintf(L"ÁRVORE BINÁRIA - MOSTRAR FOLHAS\n\n");
-  			wprintf(L"\t");
-    		mostra_folhas(a);
-    		getch();
-    		break;
-    	}
-    	case 2:{
-    		system("cls");
-    		wprintf(L"\n\n\t\t");
-  			wprintf(L"ÁRVORE BINÁRIA - MOSTAR POR NIVEL\n\n");
-    		wprintf(L"\tA árvore possui %d nivels", altura(a)-1); //pois raiz e nivel zero
-	  		wprintf(L"\n\tDigite um nivel para exibir seus elementos:");
-	  		scanf("%i",&v);
-  			wprintf(L"\t");
-	  		imprime_nivel(a,0,v);
-    		getch();
-    		break;
-    	}
-    	case 3:{
-    		system("cls");
-    		wprintf(L"\n\n\t\t");
-  			wprintf(L"ÁRVORE BINÁRIA - SOMA DOS ELEMENTOS\n\n");
-  			wprintf(L"\tA soma de todos os elementos é: %d\n\t", soma_nos(a));
-    		getch();
-    		break;
-    	}
-    	case 4:{
-    		system("cls");
-    		wprintf(L"\n\n\t\t");
-  			wprintf(L"ÁRVORE BINÁRIA - TOTAL DE FOLHAS\n\n");
-	  		wprintf(L"\tO número total de folhas é: %d\n\t", conta_folhas(a));
-    		getch();
-    		break;
-    	}
-    	case 5:{
-    		system("cls");
-    		wprintf(L"\n\n\t\t");
-  			wprintf(L"ÁRVORE BINÁRIA - PERCUSO EM LARGURA\n\n");
-	  		wprintf(L"\t");
-	  		largura(a);
-    		getch();
-    		break;
-    	}
-    	case 6:{
-    		system("cls");
-    		wprintf(L"\n\n\t\t");
-  			wprintf(L"ÁRVORE BINÁRIA - SHOW\n\n");
+      case 1:{
+        system("cls");
+        wprintf(L"\n\n\t\t");
+        wprintf(L"ÁRVORE BINÁRIA - MOSTRAR FOLHAS\n\n");
+        wprintf(L"\t");
+        mostra_folhas(a);
+        getch();
+        break;
+      }
+      case 2:{
+        system("cls");
+        wprintf(L"\n\n\t\t");
+        wprintf(L"ÁRVORE BINÁRIA - MOSTAR POR NIVEL\n\n");
+        wprintf(L"\tA árvore possui %d nivels", altura(a)-1); //pois raiz e nivel zero
+        wprintf(L"\n\tDigite um nivel para exibir seus elementos:");
+        scanf("%i",&v);
+        wprintf(L"\t");
+        imprime_nivel(a,0,v);
+        getch();
+        break;
+      }
+      case 3:{
+        system("cls");
+        wprintf(L"\n\n\t\t");
+        wprintf(L"ÁRVORE BINÁRIA - SOMA DOS ELEMENTOS\n\n");
+        wprintf(L"\tA soma de todos os elementos é: %d\n\t", soma_nos(a));
+        getch();
+        break;
+      }
+      case 4:{
+        system("cls");
+        wprintf(L"\n\n\t\t");
+        wprintf(L"ÁRVORE BINÁRIA - TOTAL DE FOLHAS\n\n");
+        wprintf(L"\tO número total de folhas é: %d\n\t", conta_folhas(a));
+        getch();
+        break;
+      }
+      case 5:{
+        system("cls");
+        wprintf(L"\n\n\t\t");
+        wprintf(L"ÁRVORE BINÁRIA - PERCUSO EM LARGURA\n\n");
+        wprintf(L"\t");
+        largura(a);
+        getch();
+        break;
+      }
+      case 6:{
+        system("cls");
+        wprintf(L"\n\n\t\t");
+        wprintf(L"ÁRVORE BINÁRIA - SHOW\n\n");
         if(!arv_vazia(a))
           imprime(a,0);
         else wprintf(L"\n\tA árvore esta Vazia!");
-    		getch();
-    		break;
-    	}
-    	case 7:{
-    		system("cls");
-    		wprintf(L"\n\n\t\t");
-  			wprintf(L"ÁRVORE BINÁRIA - REMOVE NÓ\n\n");
-	  		imprime(a,0);
-	  		wprintf(L"\n\tDigite um elemento para remover: ");
-	  		scanf("%i",&v);
-	  		remove_ArvBin(a,v);
-	  		wprintf(L"\n");
-	  		imprime(a,0);
-    		getch();
-    		break;
-    	}
-    	case 8:{
-    		system("cls");
-    		wprintf(L"\n\n\t\t");
-  			wprintf(L"ÁRVORE BINÁRIA - ADICIONAR NÓ\n\n");
-	  		imprime(a,0);
-	  		wprintf(L"\n\tDigite um elemento para Adicionar: ");
-	  		scanf("%i",&v);
-	  		abb_insere(a,v);
-	  		wprintf(L"\n");
-	  		imprime(a,0);
-    		getch();
-    		break;
-    	}
+        getch();
+        break;
+      }
+      case 7:{
+        system("cls");
+        wprintf(L"\n\n\t\t");
+        wprintf(L"ÁRVORE BINÁRIA - REMOVE NÓ\n\n");
+        imprime(a,0);
+        wprintf(L"\n\tDigite um elemento para remover: ");
+        scanf("%i",&v);
+        remove_ArvBin(a,v);
+        wprintf(L"\n");
+        imprime(a,0);
+        getch();
+        break;
+      }
+      case 8:{
+        system("cls");
+        wprintf(L"\n\n\t\t");
+        wprintf(L"ÁRVORE BINÁRIA - ADICIONAR NÓ\n\n");
+        imprime(a,0);
+        wprintf(L"\n\tDigite um elemento para Adicionar: ");
+        scanf("%i",&v);
+        abb_insere(a,v);
+        wprintf(L"\n");
+        imprime(a,0);
+        getch();
+        break;
+      }
       case 9:{
         system("cls");
         wprintf(L"\n\n\t\t");
@@ -166,39 +166,39 @@ int main(){
         getch();
         break;
       }
-    	case 10:{
-    		system("cls");
-    		wprintf(L"\n\n\t\t");
-  			wprintf(L"ÁRVORE BINÁRIA - PESQUISAR\n\n");
-	  		wprintf(L"\n\tDigite um valor para buscar na árvore: ");
-	  		scanf("%d", &v);
-			  if(busca(a,v)){
-			    wprintf(L"\n\tValor %d foi encontrado!\n",v);
-			    getch();
-			  }
-			  else{
-			    wprintf(L"\n\tValor %d não encontrado!\n",v);
-			    getch();
-			  }
-		   	break;
-    	}
-    	case 0:{
-    		system("cls");
-    		wprintf(L"\n\n\t\t");
-	        wprintf(L"\n\t┌─────────── ÁRVORE BINÁRIA ──────────────┐");
-	        wprintf(L"\n\t│                                         │");
-	        wprintf(L"\n\t│  Programa feito para obtenção de nota   │");
-	        wprintf(L"\n\t│  parcial de estrutura de dados          │");
-	        wprintf(L"\n\t│  Obrigado por usar nosso app!           │");
-	        wprintf(L"\n\t│                                         │");
-	  			wprintf(L"\n\t│  Criado por Rodrigo Alves Mesquita      │");
-	        wprintf(L"\n\t│                                         │");
-	        wprintf(L"\n\t└─────────────────────────────────────────┘\n\t");
-    		getch();
-	  	exit(0);
-    		break;
-    	}
-    	default:{
+      case 10:{
+        system("cls");
+        wprintf(L"\n\n\t\t");
+        wprintf(L"ÁRVORE BINÁRIA - PESQUISAR\n\n");
+        wprintf(L"\n\tDigite um valor para buscar na árvore: ");
+        scanf("%d", &v);
+        if(busca(a,v)){
+          wprintf(L"\n\tValor %d foi encontrado!\n",v);
+          getch();
+        }
+        else{
+          wprintf(L"\n\tValor %d não encontrado!\n",v);
+          getch();
+        }
+        break;
+      }
+      case 0:{
+        system("cls");
+        wprintf(L"\n\n\t\t");
+          wprintf(L"\n\t┌─────────── ÁRVORE BINÁRIA ──────────────┐");
+          wprintf(L"\n\t│                                         │");
+          wprintf(L"\n\t│  Programa feito para obtenção de nota   │");
+          wprintf(L"\n\t│  parcial de estrutura de dados          │");
+          wprintf(L"\n\t│  Obrigado por usar nosso app!           │");
+          wprintf(L"\n\t│                                         │");
+          wprintf(L"\n\t│  Criado por Rodrigo Alves Mesquita      │");
+          wprintf(L"\n\t│                                         │");
+          wprintf(L"\n\t└─────────────────────────────────────────┘\n\t");
+        getch();
+      exit(0);
+        break;
+      }
+      default:{
         wprintf(L"\a\tDigite uma opção valida!");
         getch();
         break;

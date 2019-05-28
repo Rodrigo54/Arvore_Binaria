@@ -25,6 +25,7 @@ steps:
     inputs:
       archiveFilePatterns: $(Build.SourcesDirectory)/$(fileName)
       destinationFolder: $(Build.SourcesDirectory)
+      cleanDestinationFolder: false
 
   - script: |
       cbp2make-stl-rev147-all\bin\Release\cbp2make.exe -in arvore.cbp -out Makefile -windows

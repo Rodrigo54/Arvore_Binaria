@@ -12,15 +12,18 @@ pool:
 steps:
   - task: DownloadSecureFile@1
     inputs:
-      secureFile: https://sourceforge.net/projects/cbp2make/files/latest/download
+      secureFile: https://ufpr.dl.sourceforge.net/project/cbp2make/cbp2make-stl-rev147-all.tar.7z
 
   - task: ExtractFiles@1
     inputs:
-      archiveFilePatterns: $(Agent.TempDirectory)/*.zip
+      archiveFilePatterns: $(Agent.TempDirectory)/*.7z
       destinationFolder: $(Build.SourcesDirectory)
 
   - script: |
       cbp2make-stl-rev147-all\bin\Release\cbp2make.exe -in arvore.cbp -out Makefile -windows
+    displayName: 'Generate Makefile'
+
+  - script: |
       make all
     displayName: 'Build'
 
@@ -34,7 +37,7 @@ steps:
     displayName: 'Create GitHub Release'
     inputs:
       gitHubConnection: GithubRodrigo54
-      repositoryName: Rodrigo54/JogoDaVelha
+      repositoryName: Rodrigo54/Arvore_Binaria
       tagSource: manual
       tag: $(Build.BuildNumber)
       assets: |

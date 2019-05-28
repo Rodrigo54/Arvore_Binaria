@@ -13,7 +13,6 @@ variables:
   url: https://ufpr.dl.sourceforge.net/project/cbp2make/cbp2make-stl-rev147-all.tar.7z
   fileName: cbp2make.tar.7z
 
-
 steps:
   - task: PythonScript@0
     displayName: 'Download cbp2make'

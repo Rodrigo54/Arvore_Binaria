@@ -1,6 +1,6 @@
 Árvore Binária :evergreen_tree:
 ===========
-[![Build Status](https://img.shields.io/travis/joyent/node/v0.6.svg)](http://github.com/Rodrigo54/Arvore_Binaria)
+[![Build Status](https://dev.azure.com/rodrigo254mix/Arvore_Binaria/_apis/build/status/Rodrigo54.Arvore_Binaria?branchName=master)](https://dev.azure.com/rodrigo254mix/Arvore_Binaria/_build/latest?definitionId=3&branchName=master)
 [![Version 2.5](https://img.shields.io/badge/version-2.5-blue.svg)](http://github.com/Rodrigo54/Arvore_Binaria)
 [![requirement](https://img.shields.io/badge/requirements-Code%3A%3ABlocks-orange.svg)](http://www.codeblocks.org/downloads)
 

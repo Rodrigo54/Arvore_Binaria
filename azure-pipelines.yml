@@ -1,0 +1,42 @@
+# C/C++ with GCC
+# Build your C/C++ project with GCC using make.
+# Add steps that publish test results, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/apps/c-cpp/gcc
+
+trigger:
+  - master
+
+pool:
+  vmImage: 'vs2017-win2016'
+
+steps:
+  - task: DownloadSecureFile@1
+    inputs:
+      secureFile: https://sourceforge.net/projects/cbp2make/files/latest/download
+
+  - task: ExtractFiles@1
+    inputs:
+      archiveFilePatterns: $(Agent.TempDirectory)/*.zip
+      destinationFolder: $(Build.SourcesDirectory)
+
+  - script: |
+      cbp2make-stl-rev147-all\bin\Release\cbp2make.exe -in arvore.cbp -out Makefile -windows
+      make all
+    displayName: 'Build'
+
+  - task: CopyFiles@2
+    displayName: 'Copy'
+    inputs:
+      contents: 'bin\Release\*.exe'
+      targetFolder: $(Build.ArtifactStagingDirectory)
+
+  - task: GithubRelease@0
+    displayName: 'Create GitHub Release'
+    inputs:
+      gitHubConnection: GithubRodrigo54
+      repositoryName: Rodrigo54/JogoDaVelha
+      tagSource: manual
+      tag: $(Build.BuildNumber)
+      assets: |
+        $(Build.ArtifactStagingDirectory)/bin/Release/*.exe
+        $(Build.ArtifactStagingDirectory)/README.txt

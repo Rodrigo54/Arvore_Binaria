@@ -9,14 +9,21 @@ trigger:
 pool:
   vmImage: 'vs2017-win2016'
 
+variables:
+  url: https://ufpr.dl.sourceforge.net/project/cbp2make/cbp2make-stl-rev147-all.tar.7z
+  fileName: cbp2make.tar.7z
+
+
 steps:
-  - task: DownloadSecureFile@1
+  - task: PythonScript@0
+    displayName: 'Download cbp2make'
     inputs:
-      secureFile: https://ufpr.dl.sourceforge.net/project/cbp2make/cbp2make-stl-rev147-all.tar.7z
+      scriptSource: 'inline'
+      script: from urllib.request import urlretrieve; urlretrieve('$(url)', '$(fileName)')
 
   - task: ExtractFiles@1
     inputs:
-      archiveFilePatterns: $(Agent.TempDirectory)/*.7z
+      archiveFilePatterns: $(Build.SourcesDirectory)/$(fileName)
       destinationFolder: $(Build.SourcesDirectory)
 
   - script: |
